@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_17_045450) do
+ActiveRecord::Schema.define(version: 2020_06_22_110505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,19 +32,19 @@ ActiveRecord::Schema.define(version: 2020_06_17_045450) do
     t.string "department"
     t.string "PAN"
     t.string "PF"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "company_id"
     t.string "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.bigint "company_id", null: false
     t.index ["company_id"], name: "index_employees_on_company_id"
   end
 
   create_table "employeesalaries", force: :cascade do |t|
-    t.integer "employee_id", null: false
-    t.integer "salary_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "employee_id", null: false
+    t.bigint "salary_id", null: false
     t.datetime "formonth"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["employee_id"], name: "index_employeesalaries_on_employee_id"
     t.index ["salary_id"], name: "index_employeesalaries_on_salary_id"
   end
