@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_06_17_045450) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_06_17_045450) do
     t.string "PF"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "company_id"
+    t.bigint "company_id"
     t.string "email"
     t.index ["company_id"], name: "index_employees_on_company_id"
   end
