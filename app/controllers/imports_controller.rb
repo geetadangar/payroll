@@ -19,8 +19,8 @@ class ImportsController < ApplicationController
 
   def import(file)
     spreadsheet = open_spreadsheet(file)
-    header = spreadsheet.row(1)
-    (2..spreadsheet.last_row).map do |i|
+    header = spreadsheet.row(2)
+    (3..spreadsheet.last_row).map do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
       Salary.file_save(row)
     end
