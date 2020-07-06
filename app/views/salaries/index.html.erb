@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<table>
+  <thead>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @salary.each do |salary| %>
+      <tr>
+        <% salary.salary_details.each do |key, value| %>
+          <td><b><%= "#{key}" %></b></td>
+          <td><%= "#{value}" %></td>
+        <% end %>
+        <td><%= button_to 'Download a PDF', export_path(salary.id), method: :post %></td>
+        <td><%= button_to 'send Email', send_email_path(salary.id), method: :post %></td>
+        <td><%# button_to 'show', salary_path(salary.id), method: :get %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

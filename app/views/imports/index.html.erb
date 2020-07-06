@@ -1,23 +1,15 @@
 <p id="notice"><%= notice %></p>
-
-<h1>import</h1>
 <table>
   <thead>
-    <tr>
-      <th>select company</th>
-      <%# raise @company.inspect %>
-      <th><%= select_tag "company_id", options_from_collection_for_select(@company, "id", "name") %></th>
-      <th colspan="3"></th>
-    </tr>
+    <th>select company</th>
+    <th>select month</th>
+    <th>upload file</th>
   </thead>
-  
   <tbody>
-    <% @company.each do |company| %>
-      <tr>
-        <td><%= company.name %></td>
-      </tr>
-    <% end %>
+    <tr>
+      <td><%= select_tag "company_id", options_from_collection_for_select(@company, "id", "name") %></td>
+      <td><%= select_month(Date.today) %></td>
+      <td><%= link_to 'Upload excel file', new_import_path %></td>
+    </tr>
   </tbody>
 </table>
-<%= link_to 'New ', new_import_path %>
-

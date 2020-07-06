@@ -17,7 +17,7 @@ module Payroll
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.i18n.fallbacks = true
-    # config.middleware.use PDFKit::Middleware, :print_media_type => true
-    config.middleware.use PDFKit::Middleware
+    config.middleware.use PDFKit::Middleware, :print_media_type => true
+    # config.middleware.use PDFKit::Middleware
   end
 end

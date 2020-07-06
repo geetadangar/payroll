@@ -1,0 +1,31 @@
+<body>
+  <div style="width: 100%; float: left; margin-top: 3rem;">
+    <h1 class="ibcl_company_name text-center mt-4">COMPLITECH SOLUTIONS PRIVATE LIMITED</h1>
+    <h6 class="ibcl_company_name text-center">Parul Nagar Society, Ahmedabad, Gujarat - 380061  CIN:U72900GJ2007PTC051398</h4>
+    <h4 class="ibcl_company_name text-center">Payslip</h6>
+  </div>
+  <table>
+    <tbody>
+      <tr>Name:<%= @salary.salary_details["Name"] %></tr></br>
+      <tr>Designation:<%= @salary.salary_details["Designation"] %></tr></br>
+      <tr>department:<%= @salary.salary_details["Department"] %></tr></br>
+      <tr>location:<%= @salary.salary_details["location"] %></tr></br>
+      <tr>Employee id:<%= @salary.salary_details["Employee ID"] %></tr></br>
+      <tr>Bank no:<%= @salary.salary_details["Bank A/C No"] %></tr></br>
+      <tr>PAN:<%= @salary.salary_details["PAN"] %></tr></br>
+      <tr>PF Number:<%= @salary.salary_details["PF Number"] %></tr></br>
+      <tr>Present Days:<%= @salary.salary_details["Present Days"] %></tr></br>
+      <tr>BAsic for PF:<%= @salary.salary_details["Basic for PF"] %></tr></br>
+      <tr>Other Basic:<%= @salary.salary_details["Other Basic"] %></tr></br>
+      <tr>HRA:<%= @salary.salary_details["HRA"] %></tr></br>
+      <tr>Incentives:<%= @salary.salary_details["Incentives"] %></tr></br>
+      <tr>Leave Encashment:<%= @salary.salary_details["Leave Encashment"] %></tr></br>
+      <tr>LIC:<%= @salary.salary_details["LIC"] %></tr></br>
+      <tr>Gross Total:<%= @salary.salary_details["Gross Total"] %></tr></br>
+      <tr>PF:<%= @salary.salary_details["PF"] %></tr></br>
+      <tr>ESI:<%= @salary.salary_details["ESI"] %></tr></br>
+      <tr>Total Deductions:<%= @salary.salary_details["Total Deductions"] %></tr></br>
+      <tr>Net Amount:<%= @salary.salary_details["Net Amount"] %></tr>
+    </tbody>
+  </table>
+</body>
