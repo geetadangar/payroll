@@ -42,12 +42,6 @@ class ImportsController < ApplicationController
     send_file file, type: 'application/pdf'
   end
 
-  # def pdf
-    # responed_to do |format|
-      # formt.pdf { render :text => PDFKit.new(pdf.find(params[:id]).content) }
-    # end
-  # end
-
   private
 
   def file_params

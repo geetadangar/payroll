@@ -50,7 +50,8 @@ class EmployeesController < ApplicationController
   def send_email
     @salary = Salary.find_by_id(params[:id])
     @email =  @salary.salary_details["email"]
-    EmployeeMailer.send_pdf_email(@email, @salary).deliver_now!
+    @pdf = PDFKit.new(salary_url, page_size: 'A4')
+    EmployeeMailer.send_pdf_email(@email, @salary, @pdf).deliver_now!
   end
 
   private
