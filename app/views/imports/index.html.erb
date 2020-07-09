@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
-<table>
-  <thead>
-    <th>select company</th>
-    <th>select month</th>
-    <th>upload file</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= select_tag "company_id", options_from_collection_for_select(@company, "id", "name") %></td>
-      <td><%= select_month(Date.today) %></td>
-      <td><%= link_to 'Upload excel file', new_import_path %></td>
-    </tr>
-  </tbody>
-</table>
+  <div>
+    <b>select company:</b>
+      <%= select_tag "company_id", options_from_collection_for_select(@company, "id", "name") %>
+  </div>
+  <div>
+    <b>select month:</b>
+      <%= select_month(Date.today) %>
+  </div>
+  <div>
+    <b>upload file:</b>
+      <%= form_with(url: imports_path, method: :post, multipart: :true) do |f| %>
+        <%= f.file_field :file %>
+        <%= f.submit "Import File" %>
+      <% end %>
+  </div>
