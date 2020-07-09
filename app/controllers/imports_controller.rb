@@ -1,5 +1,5 @@
 class ImportsController < ApplicationController
-
+  layout "layout1"
   def index
   	@company =Company.all
   end
