@@ -1,5 +1,6 @@
 class EmployeesController < ApplicationController
   layout "layout1"
+
   before_action :set_employee, only: [:edit, :update, :destroy]
   before_action :set_company, only: [:index, :edit, :update, :destroy]
 

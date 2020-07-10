@@ -1,0 +1,48 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+    <%= render "users/shared/error_messages", resource: resource %>
+      <div class="card mb-0">
+        <div class="card-body">
+          <div class="text-center mb-3">
+            <i class="icon-reading icon-2x text-slate-300 border-slate-300 border-3 rounded-round p-3 mb-3 mt-1"></i>
+            <h5 class="mb-0">Sign Up</h5>
+          </div>
+
+          <div class="field form-group form-group-feedback form-group-feedback-left">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter your E-mail", class: "form-control" %>
+            <div class="form-control-feedback">
+              <i class="icon-user text-muted"></i>
+            </div>
+          </div>
+
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+          <div class="field form-group form-group-feedback form-group-feedback-left">
+            <%= f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder: "Enter your password", class: "form-control" %>
+            <div class="form-control-feedback">
+              <i class="icon-lock2 text-muted"></i>
+            </div>
+          </div>
+
+          <div class="field form-group form-group-feedback form-group-feedback-left">
+            <%= f.password_field :password_confirmation, autofocus: true,  autocomplete: "new-password", placeholder: "Re-Enter your password", class: "form-control" %>
+            <div class="form-control-feedback">
+              <i class="icon-lock2 text-muted"></i>
+            </div>
+          </div>
+
+          <div class="actions form-group">
+            <%= button_tag(:class => "btn btn-primary btn-block") do %>
+            <i class="icon-circle-right2 ml-2"></i> Sign up
+            <% end %>
+          </div>
+
+          <%= link_to "Back", :back %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

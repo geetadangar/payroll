@@ -1,0 +1,70 @@
+<!-- Login form -->
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <% if notice.present? %>
+        <div class="alert alert-success alert-styled-left alert-arrow-left alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+          <span class="notice font-weight-semibold"><%= notice %></span>
+        </div>
+      <% end %>
+      <% if alert.present? %>
+        <div class="alert alert-danger alert-styled-left alert-arrow-left alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+          <span class="notice font-weight-semibold"><%= alert %></span>
+        </div>
+      <% end %>
+      <div class="card mb-0">
+        <div class="card-body">
+          <div class="text-center mb-3">
+            <i class="icon-reading icon-2x text-slate-300 border-slate-300 border-3 rounded-round p-3 mb-3 mt-1"></i>
+            <h5 class="mb-0">Login to your account</h5>
+          </div>
+
+          <div class="field form-group form-group-feedback form-group-feedback-left">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter your E-mail", class: "form-control" %>
+            <div class="form-control-feedback">
+              <i class="icon-user text-muted"></i>
+            </div>
+          </div>
+
+          <div class="field form-group form-group-feedback form-group-feedback-left">
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: "Enter your password", class: "form-control" %>
+            <div class="form-control-feedback">
+              <i class="icon-lock2 text-muted"></i>
+            </div>
+          </div>
+
+          <div>
+            <% if devise_mapping.rememberable? %>
+            <%= f.check_box :remember_me, class: "form-input-styled" %>
+            <%= f.label :Remember %>
+            <% end %>
+
+            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "Forgot your password?", new_password_path(resource_name), class: "ml-auto form-group d-flex align-items-center" %><br />
+            <% end %>
+          </div>
+
+          <div class="actions form-group">
+            <%= button_tag(:class => "btn btn-primary btn-block") do %>
+            <i class="icon-circle-right2 ml-2"></i> Login
+            <% end %>
+          </div>
+
+          <div class="form-group text-center text-muted content-divider">
+            <span class="px-2">Don't have an account?</span>
+          </div>
+
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <div class="actions form-group">
+            <%= link_to new_registration_path(resource_name), class: "btn btn-primary btn-block" do %>
+              <i class="icon-circle-right2 ml-2"> <b>Sign up</b> </i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

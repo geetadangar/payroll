@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'pdfkit', '0.8.4.2'
 gem 'roo', '~> 2.8'
 # Flexible authentication solution for Rails with Warden
-# gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'devise', '~> 4.7', '>= 4.7.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

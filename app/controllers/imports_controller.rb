@@ -1,5 +1,6 @@
 class ImportsController < ApplicationController
   layout "layout1"
+  before_action :authenticate_user!
   def index
   	@company =Company.all
   end
