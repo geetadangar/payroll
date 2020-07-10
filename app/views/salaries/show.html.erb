@@ -1,36 +1,199 @@
-<h1 class="text-center mt-4">COMPLITECH SOLUTIONS PRIVATE LIMITED</h1>
-<h6 class="text-center">Parul Nagar Society, Ahmedabad, Gujarat - 380061  CIN:U72900GJ2007PTC051398</h4>
-<h4 class="text-center">Payslip</h6>
-
-<table border="1" width="100%" height="100px">
-  <tr>
-    <td>
-      Name:<%= @salary.salary_details["Name"] %></br>
-      PAN:<%= @salary.salary_details["PAN"] %></br>
-      location:<%= @salary.salary_details["location"] %></br>
-      PF Number:<%= @salary.salary_details["PF Number"] %>
-    </td>
-    <td>
-      Employee id:<%= @salary.salary_details["Employee ID"] %></br>
-      Bank no:<%= @salary.salary_details["Bank A/C No"] %></br>
-      department:<%= @salary.salary_details["Department"] %></br>
-      Designation:<%= @salary.salary_details["Designation"] %>
-    </td>
-  </tr>
-</table>
-<table border="1" width="100%" height="100px">
-  <tr>
-    <td>
-      BAsic for PF:<%= @salary.salary_details["Basic for PF"] %></br>
-      Other Basic:<%= @salary.salary_details["Other Basic"] %></br>
-      HRA:<%= @salary.salary_details["HRA"] %></br>
-      Incentives:<%= @salary.salary_details["Incentives"] %>
-    </td>
-    <td>
-      PF:<%= @salary.salary_details["PF"] %></br>
-      Gross Total:<%= @salary.salary_details["Gross Total"] %></br>
-      Total Deductions:<%= @salary.salary_details["Total Deductions"] %></br>
-      Net Amount:<%= @salary.salary_details["Net Amount"] %>
-    </td>
-  </tr>
-</table>
+<style>
+  body{
+    font-family: arial, sans-serif;
+  }
+  h1{
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+  h2{
+    font-weight: normal;
+    margin-top: 50px;
+    color: #2B2B2B;
+  }
+  h4{
+    font-weight: normal;
+    color: #2B2B2B;
+    margin: 0 0 10px 0;
+    font-size:18px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    color: #2B2B2B;
+  }
+  table + table:last-child{
+    border-left: 0;
+  }
+  td, th {
+    text-align: left;
+    padding: 10px;
+  }
+</style>
+<div style="width:800px; margin: 0 auto; text-align: center;">
+  <!-- Header Content -->
+  <h1>
+    COMPLITECH SOLUTIONS PRIVATE LIMITED
+  </h1>
+  <h4>Address: 303, Sarvopari Mall, Near Bhuyangdev, Dharati Cross Road, Sola Rd, Ahmedabad, Gujarat 380061</h4>
+  <h4>CIN:U72900GJ2007PTC051398</h4>
+  <h2>Payslip for Month </h2>
+  <!-- Table 1 Content -->
+  <table style="margin-bottom: 30px;">
+    <tbody>
+      <tr>
+        <td valign="top" style="border: 1px solid #2B2B2B; padding: 0;">
+          <table style="table-layout: fixed;">
+            <tr>
+              <td>Name:</td>
+              <td><%= @salary.salary_details["Name"] %></td>
+            </tr>
+            <tr>
+              <td>Designation:</td>
+              <td><%= @salary.salary_details["Designation"] %></td>
+            </tr>
+            <tr>
+              <td>Department:</td>
+              <td><%= @salary.salary_details["Department"] %></td>
+            </tr>
+            <tr>
+              <td>Effective Work Days:</td>
+              <td><%= @salary.salary_details["Effective Work Days"] %></td>
+            </tr>
+            <tr>
+              <td>Present Days:</td>
+              <td><%= @salary.salary_details["Present Days"] %> </td>
+            </tr>
+          </table>
+        </td>
+        <td valign="top" style="border: 1px solid #2B2B2B; padding: 0;">
+          <table style="table-layout: fixed;">
+            <tr>
+              <td>Employee ID:</td>
+              <td><%= @salary.salary_details["Employee ID"] %></td>
+            </tr>
+            <tr>
+              <td>Mode of payment:</td>
+              <td><%= @salary.salary_details["Mode of Payment"] %></td>
+            </tr>
+            <tr>
+              <td>Bank Account No.:</td>
+              <td><%= @salary.salary_details["Bank A/C No"] %></td>
+            </tr>
+            <tr>
+              <td>PAN No.:</td>
+              <td><%= @salary.salary_details["PAN"] %></td>
+            </tr>
+            <tr>
+              <td>PF No.:</td>
+              <td><%= @salary.salary_details["PF Number"] %></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Table 2 Content -->
+  <table>
+    <tbody>
+      <tr>
+        <td valign="top" style="border: 1px solid #2B2B2B; padding: 0;">
+          <table style="table-layout: fixed;">
+            <tr style="border-bottom: 1px solid #2B2B2B;">
+              <th>Earnings</th>
+              <th style="text-align:right">Amount</th>
+            </tr>
+            <tr>
+              <td>Basic</td>
+              <td style="text-align:right"><%= @salary.salary_details["basic of"] %></td>
+            </tr>
+            <tr>
+              <td>Other Basic</td>
+              <td style="text-align:right"><%= @salary.salary_details["Other Basic"] %> </td>
+            </tr>
+            <tr>
+              <td>HRA</td>
+              <td style="text-align:right"><%= @salary.salary_details["HRA"] %></td>
+            </tr>
+            <tr>
+              <td>Incentives</td>
+              <td style="text-align:right"><%= @salary.salary_details["Incentives"] %></td>
+            </tr>
+            <tr>
+              <td>Leave Encashment</td>
+              <td style="text-align:right"><%= @salary.salary_details["Leave Encashment"] %></td>
+            </tr>
+            <tr>
+              <td>LIC</td>
+              <td style="text-align:right"><%= @salary.salary_details["LIC"] %></td>
+            </tr>
+          </table>
+        </td>
+        <td valign="top" style="border: 1px solid #2B2B2B; padding: 0;">
+          <table style="table-layout: fixed;">
+            <tr style="border-bottom: 1px solid #2B2B2B;">
+              <th>Deductions</th>
+              <th style="text-align:right">Amount</th>
+            </tr>
+            <tr>
+              <td>PF</td>
+              <td style="text-align:right"><%= @salary.salary_details["PF"] %></td>
+            </tr>
+            <tr>
+              <td>ESIC</td>
+              <td style="text-align:right"><%= @salary.salary_details["ESIC"] %></td>
+            </tr>
+            <tr>
+              <td>PT</td>
+              <td style="text-align:right"><%= @salary.salary_details["PT"] %></td>
+            </tr>
+            <tr>
+              <td>TDS</td>
+              <td style="text-align:right"><%= @salary.salary_details["TDS"] %></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="border: 1px solid #2B2B2B; padding: 0;">
+          <table>
+            <tr>
+              <th>Total Earnings (Rs)</th>
+              <th style="text-align:right"><%= @salary.salary_details["Gross Total"] %></th>
+            </tr>
+          </table>
+        </td>
+        <td valign="top" style="border: 1px solid #2B2B2B; padding: 0;">
+          <table>
+            <tr>
+              <th>Total Deductions (Rs)</th>
+              <th style="text-align:right"><%= @salary.salary_details["Total Deductions"] %></th>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0;">
+          <table>
+            <tr>
+              <td>Net Pay for the Month:</td>
+              <th style="text-align:right"><%= @salary.salary_details["Net Amount"] %></th>
+            </tr>
+          </table>
+        </td>
+        <td style="padding: 0;">
+          <table>
+            <tr>
+              <th style="text-align:right"><%# salary.salary_details["Amount in Words"] %></th>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table style="margin-top: 30px; border-top: 1px solid #2B2B2B;">
+    <tr>
+      <td style="padding: 10px 0;font-style: italic;">This is a computer generated payslip. No signature is required.</td>
+    </tr>
+  </table>
+</div>
