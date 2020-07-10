@@ -1,16 +1,46 @@
 <p id="notice"><%= notice %></p>
-  <div>
-    <b>select company:</b>
-      <%= select_tag "company_id", options_from_collection_for_select(@company, "id", "name") %>
+<div class="row">
+  <div class="col-lg-6 offset-lg-3">
+    <div class="card mb-0">
+      <div class="card-body">
+        <div class="text-center mb-3">
+          <h5 class="mb-0">Import Your Data</h5>
+        </div>
+        <div>
+          <table>
+            <tr>
+              <td><b>Select Month:</b></td>
+              <td>
+                <%= select_month(Date.today) %>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <table>
+            <tr>
+              <td><b>Select Company:</b></td>
+              <td>
+                <%= select_tag "company_id", options_from_collection_for_select(@company, "id", "name") %>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <%= form_with(url: imports_path, method: :post, multipart: :true) do |f| %>
+            <table>
+              <tr>
+                <td><b>Upload File:</b></td>
+                <td>
+                  <%= f.file_field :file %>
+                </td>
+                <td>
+                  <%= f.submit "Import File" %>
+                </td>
+            </table>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-  <div>
-    <b>select month:</b>
-      <%= select_month(Date.today) %>
-  </div>
-  <div>
-    <b>upload file:</b>
-      <%= form_with(url: imports_path, method: :post, multipart: :true) do |f| %>
-        <%= f.file_field :file %>
-        <%= f.submit "Import File" %>
-      <% end %>
-  </div>
+</div>
